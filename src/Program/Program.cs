@@ -35,8 +35,13 @@ namespace PII_Herencia
             Se publica en Twitter nuevo registro de pasajero!
 
             */
-            Driver driver = new Driver("pepe", "argento", 1234, "imgtest", "fusca");
-            Singleton<TwitterPublisher>.Instance.PublishDriver(driver);
+            Driver driver = new Driver("pepe", "argento", 1234, "..\\..\\assets\\bill2.jpg", "fusca", "sjdasda", 5);
+            DriverList driverList = new DriverList();
+            driverList.RegisterDriver(driver, Singleton<TwitterPublisher>.Instance);
+            
+            Passenger passenger = new Passenger("pasajero 1", "apellido", 123456789, "..\\..\\assets\\bill2.jpg", 3);
+            PassengerList passengerList = new PassengerList();
+            passengerList.RegisterPassenger(passenger, Singleton<TwitterPublisher>.Instance);
         }
     }
 }
