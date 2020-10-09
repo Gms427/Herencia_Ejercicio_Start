@@ -6,5 +6,6 @@
 
  <ItemGroup>
     <ProjectReference Include="..\TwitterLibrary\TwitterLibrary.csproj" />
+    <ProjectReference Include="..\CognitiveAPILibrary\CognitiveAPILibrary.csproj" />
   </ItemGroup>
 </Project>
