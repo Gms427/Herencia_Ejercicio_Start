@@ -20,6 +20,11 @@ namespace PII_Herencia
             this.twitter = new TwitterImage(ConsumerKey, ConsumerKeySecret, AccessToken, AccessTokenSecret);
             this.pictureValidator = new PictureValidator();
         }
+
+        public void PublishPerson(Person person, IPersonPublisher personPublisher)
+        {
+            personPublisher.Publish(person, this);
+        }
         public void PublishDriver(Driver driver){
             
             if(this.pictureValidator.ValidatePictureContainFaceSmiling(driver.Image))
@@ -42,6 +47,6 @@ namespace PII_Herencia
             {
                 Console.WriteLine($"La imagen de {passenger.Name} no contiene una cara");
             }
-        }      
+        }
     }
 }

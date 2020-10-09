@@ -16,5 +16,6 @@ namespace PII_Herencia
     {
         void PublishDriver(Driver driver);
         void PublishPassenger(Passenger passenger);
+        void PublishPerson(Person person);
     }
 }
