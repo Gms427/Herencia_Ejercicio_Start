@@ -1,5 +1,9 @@
 namespace PII_Herencia
 {
+
+    /// <summary>
+    /// Clase padre de los conductores y los pasajeros, contiene la info común entre esas sub-entidades
+    /// </summary>
     public class Person
     {
         public string Name { get; set; }

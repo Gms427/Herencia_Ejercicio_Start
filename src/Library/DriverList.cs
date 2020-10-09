@@ -3,33 +3,37 @@ using System.Collections.Generic;
 
 namespace PII_Herencia
 {
-    class DriverList: Driver
+    /// <summary>
+    /// Clase con la responsabilidad de guardar y publicar a los conductores
+    /// </summary>
+    public class DriverList
     {
-       private List<Driver> drivers; 
-        public DriverList(List<Driver> drivers)
+        private List<Driver> drivers = new List<Driver>();
+        
+        public DriverList()
         {
-            this.DriversL=drivers;
+
         }
+
         public List<Driver> DriversL
             {
                 get
                 {
                     return this.drivers;
                 }
-                set
-                {
-                    foreach(Driver d in value)
-                    {
-                        RegisterDriver(d);
-                    }
-                }
             }
-        public void RegisterDriver(Driver driv)
+
+        /// <summary>
+        /// En este método recibimos un IPublisher para poder publicar de otras formas
+        /// </summary>
+        /// <param name="driv"></param>
+        /// <param name="publisher"></param>
+        public void RegisterDriver(Driver driv, IPublisher publisher)
         {
             if (!this.DriversL.Contains(driv))
             {
                 this.drivers.Add(driv);
-                TwitterPublisher.instance.PublishDriver(driv);
+                publisher.PublishDriver(driv);
             }
         }
     }
