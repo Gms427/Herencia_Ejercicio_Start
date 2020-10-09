@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using Library;
 
 namespace PII_Herencia
 {
@@ -36,6 +35,8 @@ namespace PII_Herencia
             Se publica en Twitter nuevo registro de pasajero!
 
             */
+            Driver driver = new Driver("pepe", "argento", 1234, "imgtest", "fusca");
+            Singleton<TwitterPublisher>.Instance.PublishDriver(driver);
         }
     }
 }

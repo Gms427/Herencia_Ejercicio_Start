@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+ <ItemGroup>
+    <ProjectReference Include="..\TwitterLibrary\TwitterLibrary.csproj" />
+    <ProjectReference Include="..\CognitiveAPILibrary\CognitiveAPILibrary.csproj" />
+  </ItemGroup>
 </Project>
